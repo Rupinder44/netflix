@@ -1,14 +1,23 @@
 import React from "react";
+import styled from "styled-components";
+import logo from "../assets/logo.png";
+export default function Navbar({ isScrolled}) {
 
-function Navbar(){
-    return(
-        <nav className="navbar">
-            <img src="https://i.ibb.co/r5krrdz/logo.png" alt="" className="logo" />
-            <div className="join-box">
-                <p className="join-msg">unlimited tv shows & movies</p>
-                <button className="btn join-btn">join now</button>
-            </div>
-        </nav>
-    );
+    const links = [
+        { name: "Home", link: "/" },
+        { name: "TV Shows", link: "/tv" },
+        { name: "Movies", link: "/movies" },
+        { name: "My List", link: "/mylist" },
+    ];
+    return (
+        <Container>
+            <nav className={`flex ${isScrolled ? "scrolled" : ""}`}>
+                <div className="left flex a-center">
+                    <div className="brand flex a-center">
+                        <img src={logo} alt="logo" />
+                    </div>
+                </div>
+            </nav>
+        </Container>)
 }
-export default Navbar;
+const Container = styled.div``;
